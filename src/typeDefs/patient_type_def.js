@@ -2,11 +2,12 @@ const { gql } = require('apollo-server');
 
 const patientTypeDefs = gql`
 
+
 type Patient {
     numeroIdentificacion: String!
     tipoIdentificacion: String!
     nombreCompleto: String!
-    fechaNacimiento:LocalDate
+    fechaNacimiento:String
     estadoCivil: String!
     ocupacion:String!
     direccion: String!
@@ -16,14 +17,14 @@ type Patient {
     nombreAcompanante: String!
     aseguradora: String!
     vinculacion: String!
-    fechaIngreso:LocalDate!
+    fechaIngreso:String!
 }
 
 input PatientInput {
     numeroIdentificacion: String!
     tipoIdentificacion: String!
     nombreCompleto: String!
-    fechaNacimiento:LocalDate
+    fechaNacimiento:String
     estadoCivil: String!
     ocupacion:String!
     direccion: String!
@@ -33,7 +34,7 @@ input PatientInput {
     nombreAcompanante: String!
     aseguradora: String!
     vinculacion: String!
-    fechaIngreso:LocalDate!
+    fechaIngreso:String!
 }
 
 type Query {
@@ -42,7 +43,7 @@ type Query {
 
 type Mutation {
     createPatient(patient: PatientInput!): Patient
-    deletePatient(numeroIdentificacion: String!, tipoIdentificacion: String!)
+    deletePatient(numeroIdentificacion: String!, tipoIdentificacion: String!):Boolean
 
 }
 

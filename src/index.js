@@ -11,11 +11,12 @@ const server = new ApolloServer({
     typeDefs,
     resolvers,
     dataSources: () => ({
-        serviceAPI: new ServiceAPI(),
+       // serviceAPI: new ServiceAPI(),
         patientAPI: new PatientAPI(),
     }),
     introspection: true,
-    playground: true
+    playground: true,
+
 });
 
 server.listen(process.env.PORT || 4000).then(({ url }) => {

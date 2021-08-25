@@ -1,8 +1,7 @@
-const patientTypeDefs = require('./patient_type_def');
-const serviceTypeDefs = require('./service_type_def');
+const patientResolver = require('./patient_resolver');
 
 const lodash = require('lodash');
 
-const resolvers = lodash.merge(patientTypeDefs, serviceTypeDefs);
+const resolvers = lodash.merge(patientResolver);
 
 module.exports = resolvers;
